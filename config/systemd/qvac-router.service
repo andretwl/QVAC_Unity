@@ -1,0 +1,16 @@
+[Unit]
+Description=QVAC Model Router — unified OpenAI-compatible gateway
+After=network.target qvac-server.service
+Requires=qvac-server.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /mnt/data/projects/QVAC/services/router/gateway.js
+Restart=on-failure
+RestartSec=5
+User=athar
+WorkingDirectory=/mnt/data/projects/QVAC
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=QVAC Unified Server — HTTP API + P2P provider + mDNS + Dashboard
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /mnt/data/projects/QVAC/services/server.js
+Restart=on-failure
+RestartSec=5
+User=athar
+WorkingDirectory=/mnt/data/projects/QVAC
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=default.target

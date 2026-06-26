@@ -1,0 +1,7 @@
+{
+  "model": "QWEN3_4B_INST_Q4_K_M",
+  "ctx_size": 4096,
+  "gpu_layers": 99,
+  "device": "gpu",
+  "description": "Best quality (~31 tok/s, 94.5% VRAM)"
+}

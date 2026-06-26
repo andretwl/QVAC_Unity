@@ -1,0 +1,13 @@
+node_modules/
+.qvac/models/
+.qvac/tmp/
+*.log
+.env
+dist/
+build/
+.DS_Store
+artifacts/lora/
+artifacts/logs/
+.hermes/plans/archive/
+*.swp
+*.swo

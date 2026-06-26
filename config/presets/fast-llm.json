@@ -1,0 +1,7 @@
+{
+  "model": "LLAMA_3_2_1B_INST_Q4_0",
+  "ctx_size": 4096,
+  "gpu_layers": 99,
+  "device": "gpu",
+  "description": "Fastest for simple/realtime tasks (~256 tok/s)"
+}

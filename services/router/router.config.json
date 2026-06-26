@@ -1,0 +1,25 @@
+{
+  "port": 3001,
+  "defaultBackend": "qvac",
+  "modelRouting": {
+    "default-llm": "qvac",
+    "fast-llm": "qvac",
+    "quality-llm": "qvac",
+    "tiny-llm": "qvac"
+  },
+  "backends": {
+    "qvac": {
+      "baseUrl": "http://localhost:11435",
+      "apiPrefix": "/v1",
+      "openaiCompat": true,
+      "listEndpoint": "/v1/models",
+      "listTransformer": "openai",
+      "chatEndpoint": "/v1/chat/completions",
+      "embedEndpoint": "/v1/embeddings"
+    }
+  },
+  "compatibility": {
+    "preferStreaming": true,
+    "timeoutMs": 60000
+  }
+}

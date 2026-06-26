@@ -1,0 +1,7 @@
+{
+  "model": "QWEN3_1_7B_INST_Q4",
+  "ctx_size": 4096,
+  "gpu_layers": 99,
+  "device": "gpu",
+  "description": "Best speed/quality balance (~160 tok/s on RTX 3060)"
+}

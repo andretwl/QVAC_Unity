@@ -1,0 +1,7 @@
+{
+  "model": "QWEN3_600M_INST_Q4",
+  "ctx_size": 4096,
+  "gpu_layers": 99,
+  "device": "gpu",
+  "description": "Speed king for simple Q&A (~203 tok/s)"
+}

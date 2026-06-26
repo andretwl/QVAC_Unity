@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QVAC Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Status Bar -->
+  <header class="status-bar">
+    <div class="logo">⚡ QVAC Dashboard</div>
+    <div class="status-icons">
+      <span class="server-badge" id="status-qvac" title="QVAC Server">▸ QVAC :11435 <span class="dot">⬤</span></span>
+      <span class="server-badge" id="status-router" title="Model Router">▸ Router :3001 <span class="dot">⬤</span></span>
+    </div>
+    <div class="header-right">
+      <span class="vram-indicator" id="vram-indicator">VRAM: -- / -- MiB</span>
+      <span class="gpu-temp" id="gpu-temp">🌡 --°C</span>
+      <button id="btn-refresh" class="btn-icon" title="Refresh">🔄</button>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <!-- Left Panel: Models -->
+    <aside class="panel models-panel">
+      <h2>📋 Models</h2>
+      <div class="model-section">
+        <h3>🔄 Unified (Router :3001)</h3>
+        <div id="router-models" class="model-list">
+          <div class="loading">Loading...</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center: Chat Playground -->
+    <main class="panel chat-panel">
+      <h2>💬 Chat Playground</h2>
+      <div class="model-selector">
+        <label>Model:</label>
+        <select id="model-select"></select>
+        <button id="btn-load-model" class="btn-small">Load</button>
+        <button id="btn-unload-model" class="btn-small">Unload</button>
+        <span id="model-status" class="model-status"></span>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="welcome-msg">
+          <h3>👋 Welcome!</h3>
+          <p>Select a model and start chatting, or use a quick test below.</p>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <textarea id="chat-input" placeholder="Type a message..." rows="2"></textarea>
+        <button id="btn-send" class="btn-primary">Send</button>
+      </div>
+      <div class="quick-tests">
+        <button class="btn-test" data-prompt="Explain quantum computing in simple terms.">🔬 Quantum</button>
+        <button class="btn-test" data-prompt="Write a Python function to sort a list of dictionaries by a key.">🐍 Code</button>
+        <button class="btn-test" data-prompt="Summarize: Machine learning is a subset of AI that uses data to train models...">📝 Summarize</button>
+        <button class="btn-test" data-prompt="Write a haiku about artificial intelligence.">📜 Haiku</button>
+        <button class="btn-test" data-prompt="What are the best practices for REST API design?">🌐 API Design</button>
+      </div>
+    </main>
+
+    <!-- Right Panel: System Info -->
+    <aside class="panel system-panel">
+      <h2>🖥️ System</h2>
+      <div class="vram-gauge-container">
+        <div class="vram-gauge-label">GPU VRAM</div>
+        <div class="vram-gauge-bg">
+          <div class="vram-gauge-fill" id="vram-gauge-fill" style="width: 0%"></div>
+        </div>
+        <div class="vram-gauge-text" id="vram-gauge-text">0 / 0 MiB (0%)</div>
+        <div class="vram-details" id="vram-details"></div>
+      </div>
+      <div class="server-info">
+        <h3>Server Status</h3>
+        <div id="server-info-list"></div>
+      </div>
+      <div class="capability-tests">
+        <h3>🧪 Quick Tests</h3>
+        <button class="btn-test" id="btn-test-embed">Test Embeddings</button>
+        <button class="btn-test" id="btn-test-list">List Models (API)</button>
+        <button class="btn-test" id="btn-test-vram">Check VRAM</button>
+      </div>
+      <div class="capability-tests" style="margin-top:8px;">
+        <h3>📱 iOS Integration</h3>
+        <a href="/ios.html" class="btn-test" style="display:block;text-align:center;text-decoration:none;">📸 Setup iPhone</a>
+      </div>
+    </aside>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

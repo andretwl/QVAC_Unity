@@ -1,0 +1,15 @@
+[Unit]
+Description=QVAC mDNS Publisher — advertise server on LAN for iOS discovery
+After=network.target
+Wants=avahi-daemon.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /mnt/data/projects/QVAC/services/mdns/publish.sh
+Restart=on-failure
+RestartSec=5
+User=athar
+WorkingDirectory=/mnt/data/projects/QVAC
+
+[Install]
+WantedBy=default.target

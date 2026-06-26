@@ -1,0 +1,34 @@
+{
+  "loggerConsoleOutput": true,
+  "loggerLevel": "info",
+  "cacheDirectory": "/mnt/data/projects/QVAC/.qvac/models",
+  "httpDownloadConcurrency": 3,
+  "httpConnectionTimeoutMs": 10000,
+  "registryDownloadMaxRetries": 3,
+  "registryStreamTimeoutMs": 60000,
+  "serve": {
+    "models": {
+      "default-llm": {
+        "model": "QWEN3_1_7B_INST_Q4",
+        "default": true,
+        "preload": true,
+        "config": { "ctx_size": 4096, "gpu_layers": 99 }
+      },
+      "fast-llm": {
+        "model": "LLAMA_3_2_1B_INST_Q4_0",
+        "preload": false,
+        "config": { "ctx_size": 4096, "gpu_layers": 99 }
+      },
+      "quality-llm": {
+        "model": "QWEN3_4B_INST_Q4_K_M",
+        "preload": false,
+        "config": { "ctx_size": 4096, "gpu_layers": 99 }
+      },
+      "tiny-llm": {
+        "model": "QWEN3_600M_INST_Q4",
+        "preload": false,
+        "config": { "ctx_size": 4096, "gpu_layers": 99 }
+      }
+    }
+  }
+}
